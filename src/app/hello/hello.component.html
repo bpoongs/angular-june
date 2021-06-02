@@ -1,0 +1,11 @@
+<h1>Hello Component</h1>
+<h4>{{ movieName }} </h4>
+<p>
+    Movie Name : 
+    <input type='text' value='{{ movieName }}'/>
+    <input type='text' [value]='movieName'/>
+</p>
+<div>
+   <button type='button' (click)='displayMovieName()'>Click to view movie name!</button> 
+   <p>{{ displayMovie }}</p>
+</div>

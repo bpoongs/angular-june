@@ -1,0 +1,8 @@
+<div class='container'>
+<h2>List Product Component</h2>
+<ul class='list-group' *ngFor='let product of allProducts'>
+   <!-- <li>101, Cakes, 10, Deliciuos Cakes!!</li>
+    <li>102, Cookies, 8, Cookies!!</li>-->
+    <li class='list-group-item'>{{ product.productId }}, {{ product.productName }}, {{ product.productCost }}, {{ product.productDescription}}</li>
+</ul>
+</div>
