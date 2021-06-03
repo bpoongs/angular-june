@@ -7,13 +7,21 @@ import { HelloComponent } from './hello/hello.component';
 import { CounterComponent } from './counter/counter.component';
 import { FormsModule } from '@angular/forms';
 import { ListProductComponent } from './list-product/list-product.component';
+import { ListProductCardComponent } from './list-product-card/list-product-card.component';
+import { SortPipe } from './pipes/sort.pipe';
+import { ColorDirective } from './directives/color.directive';
+import { ProductComponent } from './list-product/product/product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloComponent,
     CounterComponent,
-    ListProductComponent
+    ListProductComponent,
+    ListProductCardComponent,
+    ColorDirective,
+    SortPipe,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

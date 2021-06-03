@@ -1,0 +1,10 @@
+<li class='list-group-item'>
+    {{ productData.productId }}, 
+    {{ productData.productName }}, 
+    {{ productData.productCost }}, 
+    {{ productData.productDescription}}
+    <button 
+        class='btn btn-danger' 
+        type='button' 
+        (click)='deleteProduct(productData.productId)'>Delete</button>
+</li>

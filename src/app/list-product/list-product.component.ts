@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from './product';
 
 @Component({
   selector: 'app-list-product',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListProductComponent implements OnInit {
 
-  allProducts = [
+  allProducts: Product[] = [
     {
       productId: 101,
       productName: 'Cakes',
@@ -36,4 +37,13 @@ export class ListProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  deleteProductParent(data: any){
+    console.log(data);
+    for(let i=0; i<this.allProducts.length; i++){
+      if(this.allProducts[i].productId==data){
+        this.allProducts.splice(i, 1);
+        break;
+      }
+    }
+  }
 }
