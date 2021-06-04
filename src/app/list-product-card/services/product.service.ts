@@ -7,7 +7,7 @@ import { Product } from '../product';
 })
 export class ProductService {
   
- // baseUrl: string = 'http://localhost:3000/products';
+  baseUrl: string = 'http://localhost:3000/products';
 
  /*
   allProducts: Product[] = [
@@ -34,10 +34,16 @@ export class ProductService {
     }
   ];
   */
-  getAllProducts(){
-    //return this.allProducts;
-    
-  }
+  
 
   constructor(private http: HttpClient) { }
+
+  getAllProducts(){
+    //return this.allProducts;
+    //this.http.get
+    //this.http.put
+    //this.http.post
+    //this.http.delete
+     return this.http.get<Product[]>(this.baseUrl);
+  }
 }

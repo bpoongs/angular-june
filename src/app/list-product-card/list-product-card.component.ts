@@ -46,7 +46,15 @@ export class ListProductCardComponent implements OnInit {
   }
 
   ngOnInit(): void { 
-    this.allProducts = this.productService.getAllProducts();  
+    //this.allProducts = this.productService.getAllProducts();  
+
+    this.productService.getAllProducts().subscribe((response) => {
+      console.log(response);
+      this.allProducts = response;
+    }, 
+    (error) => {
+      console.log(error);
+    })
    }
 
   addToCart(product: Product){

@@ -1,0 +1,9 @@
+to work with json-server
+------------------------
+1) install json-server globally
+		npm install -g json-server
+2) start the json server by providing the json file which 
+	is to be watched/which provides the data to the json-server
+		json-server --watch src/assets/data/products.json
+3) now json-server will listen on port 3000 and the url is 
+		"http://localhost:3000/products"
