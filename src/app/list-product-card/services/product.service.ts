@@ -40,10 +40,15 @@ export class ProductService {
 
   getAllProducts(){
     //return this.allProducts;
-    //this.http.get
-    //this.http.put
-    //this.http.post
-    //this.http.delete
+    //this.http.get - fetch
+    //this.http.put - update
+    //this.http.post - insert
+    //this.http.delete - delete
      return this.http.get<Product[]>(this.baseUrl);
   }
+
+
+
+
+  
 }

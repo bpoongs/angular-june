@@ -1,0 +1,14 @@
+to work with routes
+--------------------
+1) configure the route path for the components in the
+   app-routing.module.ts
+2) place the <router-outlet></router-outlet> tag on the component
+   where you want the routed components to be displayed.
+
+3 ways to route to a component
+-------------------------------
+1) type the route path in the url
+2) use anchor tags with routerLink attribute instead of href attribute
+	(so that the entire page doesnt get reloaded)
+3) inject Router to the component from where you want to navigate and
+	use this.router.navigate(['route-path']);

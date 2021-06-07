@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router'; // needed for routing from component
 //import { ProductService } from '../services/product.service';
-import { Product } from './product';
+import { Product } from './product'; //interface is imported
 import { ProductService } from './services/product.service';
 
 @Component({
@@ -40,7 +40,7 @@ export class ListProductCardComponent implements OnInit {
   
   //productService: ProductService | undefined;
 
-  constructor(private productService: ProductService){
+  constructor(private productService: ProductService, private router: Router){
     //this.productService = productService;
     
   }
@@ -70,5 +70,12 @@ export class ListProductCardComponent implements OnInit {
           break;
       }
     }
+  }
+
+  editProduct(productId: number){
+    console.log(productId);
+    //http://localhost:4200/edit-product/102
+
+    this.router.navigate(['edit-product', productId]);
   }
 }
