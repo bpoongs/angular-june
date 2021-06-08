@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Product } from '../product';
+import { Product } from '../list-product-card/product';
 
 @Injectable({
   providedIn: 'root'
@@ -47,8 +47,21 @@ export class ProductService {
      return this.http.get<Product[]>(this.baseUrl);
   }
 
+  addProduct(product: Product){
+    product.id = 106;
+    return this.http.post<Product>(this.baseUrl, product);
+  }
 
+  getProduct(productId: string){
+    //http://localhost:3000/products/101
+    return this.http.get<Product>(this.baseUrl+'/'+productId)
+  }
 
-
-  
+  updateProduct(product: Product){
+    //return this.http.put<Product>(this.baseUrl, product);
+    
+    // commented above line. We have to pass the product id in the 
+    // url as in the below statement. Now update works.... 
+    return this.http.put<Product>(this.baseUrl+'/'+product.id, product);
+  }
 }

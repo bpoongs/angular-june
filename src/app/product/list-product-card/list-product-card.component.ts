@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; // needed for routing from component
-//import { ProductService } from '../services/product.service';
 import { Product } from './product'; //interface is imported
-import { ProductService } from './services/product.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-list-product-card',
@@ -77,5 +76,9 @@ export class ListProductCardComponent implements OnInit {
     //http://localhost:4200/edit-product/102
 
     this.router.navigate(['edit-product', productId]);
+  }
+
+  toAddProduct(){
+    this.router.navigate(['add-product']);
   }
 }
