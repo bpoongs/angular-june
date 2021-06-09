@@ -22,6 +22,11 @@
                         class='form-control' 
                         name='productName'
                         formControlName='productName'>
+                    <span 
+                        *ngIf="editForm.get('productName').touched && editForm.get('productName').errors?.required" 
+                        class="text-danger small">
+                         Product Name is required!   
+                    </span>
                 </div>
                 <div class='form-group'>
                     <label for='productCost'>Product Cost</label>
@@ -59,5 +64,13 @@
         </div>
     </div>
 </form>
-{{ editForm.value | json }}
+
 <button class="btn btn-success" type="button" (click)="backToList()">Back to Product List... </button>
+
+<br>{{ editForm.value | json }} <br>
+Product Name status : {{ editForm.get('productName').status }} <br>
+Product Name touched : {{ editForm.get('productName').touched }} <br>
+Product Name untouched : {{ editForm.get('productName').untouched }} <br>
+Product Name dirty : {{ editForm.get('productName').dirty }} <br>
+Product Name pristine : {{ editForm.get('productName').pristine }} <br>
+

@@ -19,6 +19,7 @@ import { ErrorComponent } from './error/error.component';
 import { TemplateUserRegistrationComponent } from './template-user-registration/template-user-registration.component';
 import { ReactiveUserRegistrationComponent } from './reactive-user-registration/reactive-user-registration.component';
 import { AddProductComponent } from './product/add-product/add-product.component';
+import { MustMatchDirective } from './directives/must-match.directive';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AddProductComponent } from './product/add-product/add-product.component
     ErrorComponent,
     TemplateUserRegistrationComponent,
     ReactiveUserRegistrationComponent,
-    AddProductComponent
+    AddProductComponent,
+    MustMatchDirective
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,20 @@
                         id='productName' 
                         class='form-control' 
                         name='productName'
+                        #prodName='ngModel'
+                        required
+                        minlength="5"
                         [(ngModel)]='productName'>
+                    <span 
+                        *ngIf='prodName.touched && prodName.errors?.required' 
+                        class="text-danger small">
+                         Product Name is required!   
+                    </span>
+                    <span 
+                        *ngIf='prodName.touched && prodName.errors?.minlength' 
+                        class="text-danger small">
+                         Product Name should be of minimum 5 characters!   
+                    </span>
                 </div>
                 <div class='form-group'>
                     <label for='productCost'>Product Cost</label>
@@ -45,8 +58,18 @@
             <div class='card-footer'>
                 <button 
                     type='submit' 
+                    [disabled]='!productForm.valid'
                     class='btn btn-success'>Add Product</button> 
             </div>
         </div>
     </div>
 </form>
+Product Name Value : {{ prodName.value }} <br>
+Product Name status : {{ prodName.status }} <br>
+Product Name valid : {{ prodName.valid }} <br>
+Product Name invalid : {{ prodName.invalid }} <br>
+Product Name touched : {{ prodName.touched }} <br>
+Product Name untouched : {{ prodName.untouched }} <br>
+Product Name dirty : {{ prodName.dirty }} <br>
+Product Name pristine : {{ prodName.pristine }} <br>
+Product Name errors for required : {{ prodName.errors?.required }} <br>

@@ -8,16 +8,14 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateUserRegistrationComponent implements OnInit {
 
+ 
   model: any = {};
-
-  onSubmit(userForm: NgForm) {
-    console.log(userForm);
+  onSubmit() {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model, null, 4));
   }
-  
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
-
 }
