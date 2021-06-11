@@ -13,6 +13,9 @@ export class ListProductCardComponent implements OnInit {
   cartProducts: Product[] = [];
   total: number = 0;
   allProducts: Product[] = [];
+
+  filteredProducts: Product[] = [];
+  searchString = '';
   // allProducts: Product[] = [
   //   {
   //     id: 101,
@@ -50,6 +53,7 @@ export class ListProductCardComponent implements OnInit {
     this.productService.getAllProducts().subscribe((response) => {
       console.log(response);
       this.allProducts = response;
+      this.filteredProducts = this.allProducts;
     }, 
     (error) => {
       console.log(error);
@@ -81,4 +85,11 @@ export class ListProductCardComponent implements OnInit {
   toAddProduct(){
     this.router.navigate(['add-product']);
   }
+
+  filterProduct(){
+    this.allProducts = this.filteredProducts.filter(
+      (product: Product) => product.productName.toLocaleLowerCase().indexOf(this.searchString.toLocaleLowerCase()) != -1
+    );
+  }
+  
 }

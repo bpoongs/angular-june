@@ -7,6 +7,10 @@
                 type='button' 
                 class='btn btn-success'
                 (click)='toAddProduct()'>+</button>
+            <input 
+                type="text"
+                [(ngModel)]='searchString'
+                (keyup)='filterProduct()'>
             <div class='row mt-5'>
                 <div 
                     appColor
