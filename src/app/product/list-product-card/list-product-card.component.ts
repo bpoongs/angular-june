@@ -14,8 +14,11 @@ export class ListProductCardComponent implements OnInit {
   total: number = 0;
   allProducts: Product[] = [];
 
+  // added for search string
   filteredProducts: Product[] = [];
   searchString = '';
+
+
   // allProducts: Product[] = [
   //   {
   //     id: 101,
@@ -53,6 +56,7 @@ export class ListProductCardComponent implements OnInit {
     this.productService.getAllProducts().subscribe((response) => {
       console.log(response);
       this.allProducts = response;
+      //added for search string
       this.filteredProducts = this.allProducts;
     }, 
     (error) => {

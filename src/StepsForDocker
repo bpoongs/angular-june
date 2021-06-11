@@ -1,0 +1,26 @@
+steps for deploying angular application in docker.
+
+1) build your angular application using the command
+        ng build
+2) create a dockerfile in your angular project folder and 
+   copy the below contents into it.
+
+   FROM nginx:1.17.7-alpine
+    ## Remove default nginx website
+    RUN rm -rf /usr/share/nginx/html/*
+    ## From 'builder' stage copy over the artifacts in 
+    ##dist folder to default nginx public folder
+    COPY /dist/angular-final-demo /usr/share/nginx/html
+    CMD ["nginx", "-g", "daemon off;"]
+
+3) install docker in your laptop.
+4) open a command prompt and navigate to your project folder
+5) run the command to build your docker file to get the image.
+        docker build . -t <imagename>
+6) confirm whether the image is created by listing the images
+        docker images
+7) run the image with port mapping to create the container
+        docker run -p 4444:80 <imagename>
+8) open a browser and type the url "http://localhost:4444" to see the 
+    the index page of your angular project deployed in nginx server in docker.
+    

@@ -8,3 +8,5 @@ module.exports = () => ({
   // Something more
 });
 
+// start the json server by watching this file
+// > json-server --watch src/assets/data/data.js
